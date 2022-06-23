@@ -71,6 +71,24 @@
             margin-right: 0.5em;
             font-size: 2vw;
         }
+        .user_message{
+            background-color: #eee;
+            border-radius: 2vw;
+            padding: 1.5vw;
+            margin-top: 0.5em;
+            width: 70%;
+            margin-left: 0;
+            margin-right: auto;
+        }
+        .bot_message{
+            background-color: #eee;
+            border-radius: 2vw;
+            padding: 1.5vw;
+            margin-top: 0.5em;
+            width: 70%;
+            margin-left: auto;
+            margin-right: 0;
+        }
 
     </style>
     <!-- <py-env>
@@ -88,10 +106,18 @@
                 <button class="button">Send</button>
             </div><hr>
             <div class="conversation">
-                <b>You:</b> Hello chatbot, how are you?<br>
-                <b>Chatbot:</b> Fine thank you<br>
-                <b>You:</b> Can you describe the solar system?<br>
-                <b>Chatbot:</b> ...<br>
+                <div class="user_message">
+                    <b>You:</b> Hello chatbot, how are you?<br>
+                </div>
+                <div class="bot_message">
+                    <b>Chatbot:</b> Fine thank you<br>
+                </div>
+                <div class="user_message">
+                    <b>You:</b> Can you describe the solar system?<br>
+                </div>
+                <div class="bot_message">
+                    <b>Chatbot:</b> ...<br>
+                </div>
             </div>
         </div>
         <div class="bot_image">
