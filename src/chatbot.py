@@ -11,13 +11,14 @@ def update_chat_with_user_message(event):
     conversation.write(updated_content)
     # this is used to create the ilusion of the bot taking some time to reply
     setTimeout(create_once_callable(update_chat_with_bot_reply), 1000)
-
+    auto_scroll_down()
 
 def update_chat_with_bot_reply():
     conversation = Element('conversation')
     initial_content = conversation.element.innerHTML
     updated_content = initial_content + format_bot_message(get_bot_reply())
     conversation.write(updated_content)
+    auto_scroll_down()
 
 
 def format_user_message(text):
@@ -45,6 +46,11 @@ def get_bot_reply():
         "Sorry, I don't understand you",
     ]
     return random.choice(replies)
+
+
+def auto_scroll_down():
+    conversation = Element('conversation')
+    conversation.element.scrollTop = conversation.element.scrollHeight
 
 
 button = document.querySelector("button")
