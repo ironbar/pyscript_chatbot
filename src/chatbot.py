@@ -1,6 +1,4 @@
 import random
-import time
-
 from pyodide import create_proxy
 
 
@@ -10,9 +8,6 @@ def update_chat(event):
     new_text = Element('text_input').value
     updated_content = initial_content + format_user_message(new_text) + format_bot_message(get_bot_reply())
     conversation.write(updated_content)
-    for i in range(10):
-        conversation.write(updated_content + '.'*i)
-        time.sleep(0.1)
 
 
 def format_user_message(text):
