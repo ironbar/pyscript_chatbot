@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pyscript chatbot</title>
-    <!-- <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script> -->
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
     <style>
         body {
           background-color: #eee;
@@ -105,8 +105,8 @@
                 <input id="text_input" type="text" placeholder="Message" class="text_input">
                 <button class="button">Send</button>
             </div><hr>
-            <div class="conversation">
-                <div class="user_message">
+            <div class="conversation" id="conversation">
+                <!-- <div class="user_message">
                     <b>You:</b> Hello chatbot, how are you?<br>
                 </div>
                 <div class="bot_message">
@@ -117,6 +117,9 @@
                 </div>
                 <div class="bot_message">
                     <b>Chatbot:</b> ...<br>
+                </div> -->
+                <div class="bot_message">
+                    <b>Chatbot:</b> Hello, how can I help you?<br>
                 </div>
             </div>
         </div>
@@ -124,6 +127,8 @@
             <img src="https://st3.depositphotos.com/8950810/17657/v/450/depositphotos_176577870-stock-illustration-cute-smiling-funny-robot-chat.jpg" alt="bot" class="img_center">
         </div>
     </div>
+    <py-repl></py-repl>
+    <py-script src="src/chatbot.py"></py-script>
 </body>
 
 </html>
