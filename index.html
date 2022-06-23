@@ -73,20 +73,20 @@
 
         .button {
             border: 2px solid rgb(22, 63, 9);
-            padding: 4vw 1vw;
-            text-align: center;
+            /* padding: 4vw 1vw; */
+            /* text-align: center; */
             text-decoration: none;
             display: inline-block;
-            font-size: 3vw;
+            font-size: 2vw;
             transition-duration: 0.4s;
-            width: 100%;
+            width: 20%;
             border-radius: 2vw;
         }
         .button:hover {
             background-color: #c2f3c2;
         }
         .text_input {
-            width: 100%;
+            width: 70%;
             font-size: 2vw;
             border: 1px solid rgb(22, 63, 9);
         }
@@ -107,18 +107,22 @@
 
 <body>
     <div class="web_title"><b>Talk with the chatbot</b></div>
-    <div class="bot_image">
-        <img src="https://st3.depositphotos.com/8950810/17657/v/450/depositphotos_176577870-stock-illustration-cute-smiling-funny-robot-chat.jpg" alt="bot">
-    </div>
-    <div class="conversation">
-        <b>You:</b> Hello chatbot, how are you?<br>
-        <b>Chatbot:</b> Fine thank you<br>
-        <b>You:</b> Can you describe the solar system?<br>
-        <b>Chatbot:</b> ...<br>
-    </div><hr>
-    <div class="interface">
-        <input id="text_input" type="text" placeholder="Message" class="text_input">
-        <button class="button">Send</button><hr>
+    <div class="container">
+        <div class="chat">
+            <div class="interface">
+                <input id="text_input" type="text" placeholder="Message" class="text_input">
+                <button class="button">Send</button>
+            </div><hr>
+            <div class="conversation">
+                <b>You:</b> Hello chatbot, how are you?<br>
+                <b>Chatbot:</b> Fine thank you<br>
+                <b>You:</b> Can you describe the solar system?<br>
+                <b>Chatbot:</b> ...<br>
+            </div>
+        </div>
+        <div class="bot_image">
+            <img src="https://st3.depositphotos.com/8950810/17657/v/450/depositphotos_176577870-stock-illustration-cute-smiling-funny-robot-chat.jpg" alt="bot">
+        </div>
     </div>
 </body>
 
