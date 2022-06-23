@@ -1,12 +1,22 @@
 import random
-from pyodide import create_proxy
+from js import setTimeout
+from pyodide import create_proxy, create_once_callable
 
 
-def update_chat(event):
+def update_chat_with_user_message(event):
     conversation = Element('conversation')
     initial_content = conversation.element.innerHTML
     new_text = Element('text_input').value
-    updated_content = initial_content + format_user_message(new_text) + format_bot_message(get_bot_reply())
+    updated_content = initial_content + format_user_message(new_text)
+    conversation.write(updated_content)
+    # this is used to create the ilusion of the bot taking some time to reply
+    setTimeout(create_once_callable(update_chat_with_bot_reply), 1000)
+
+
+def update_chat_with_bot_reply():
+    conversation = Element('conversation')
+    initial_content = conversation.element.innerHTML
+    updated_content = initial_content + format_bot_message(get_bot_reply())
     conversation.write(updated_content)
 
 
@@ -38,4 +48,4 @@ def get_bot_reply():
 
 
 button = document.querySelector("button")
-button.addEventListener("click", create_proxy(update_chat))
+button.addEventListener("click", create_proxy(update_chat_with_user_message))
