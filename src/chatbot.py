@@ -10,7 +10,7 @@ def update_chat_with_user_message(event):
     updated_content = initial_content + format_user_message(new_text)
     conversation.write(updated_content)
     # this is used to create the ilusion of the bot taking some time to reply
-    setTimeout(create_once_callable(update_chat_with_bot_reply), 1000)
+    setTimeout(create_once_callable(update_chat_with_bot_reply), 500)
     auto_scroll_down()
 
 def update_chat_with_bot_reply():
